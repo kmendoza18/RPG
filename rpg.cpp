@@ -11,36 +11,63 @@
  *      - 1.0.0 -   Initial Code
  **/
 
- /**
-  * Included libraries, definitions, and function declarations.
-  **/
+/**
+ * Included libraries, definitions, and function declarations.
+ **/
 
-  #include <iostream>
-  #include <stdlib.h>
+#include <iostream>
+#include <stdlib.h>
+#include <fstream>
 
-  using namespace std;
+using namespace std;
 
-  int menu();
+int menu();
 
-  int main(void)
+void characterCreation();
+
+int main(void)
+{
+  int choice = 0;
+
+  choice = menu();
+
+  switch ( choice )
   {
-      menu();
-      return 0;
+      case 1: {
+          characterCreation();
+      }
+      case 2: {
+
+      }
+      case 0: {
+          cout << "\nThank you for playing!" << endl;
+          break;
+      }
   }
 
-  int menu()
-  {
-      int choice = 0;
+  return 0;
+}
 
-      cout << endl;
-      cout << "Welcome to RPG" << endl;
-      cout << endl;
-      cout << "1) New Game" << endl;
-      cout << "2) Load Game" << endl;
-      cout << "0) Exit" << endl;
-      cout << endl;
-      cout << "Choice:" << endl;
-      cin >> choice;
+int menu()
+{
+  int choice = 0;
 
-      return choice;
-  }
+  cout << endl;
+  cout << "Welcome to RPG" << endl;
+  cout << endl;
+  cout << "1) New Game" << endl;
+  cout << "2) Load Game" << endl;
+  cout << "0) Exit" << endl;
+  cout << endl;
+  cout << "Choice:" << endl;
+  cin >> choice;
+
+  return choice;
+}
+
+void characterCreation()
+{
+    string character;
+    cout << "What is your character's name?" << endl;
+    cin >> character;
+}
